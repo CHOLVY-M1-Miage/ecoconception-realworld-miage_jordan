@@ -1,18 +1,18 @@
-import { Component, inject, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { TagsService } from "../../core/services/tags.service";
-import { ArticleListConfig } from "../../core/models/article-list-config.model";
-import { AsyncPipe, NgClass, NgForOf } from "@angular/common";
-import { ArticleListComponent } from "../../shared/article-helpers/article-list.component";
-import { takeUntil, tap } from "rxjs/operators";
-import { Subject } from "rxjs";
-import { UserService } from "../../core/services/user.service";
-import { LetDirective } from "@rx-angular/template/let";
-import { ShowAuthedDirective } from "../../shared/show-authed.directive";
+import {Component, inject} from '@angular/core';
+import {ArticleListConfig} from "../../../core/models/article-list-config.model";
+import {TagsService} from "../../../core/services/tags.service";
+import {takeUntil, tap} from "rxjs/operators";
+import {Subject} from "rxjs";
+import {Router} from "@angular/router";
+import {UserService} from "../../../core/services/user.service";
+import {AsyncPipe, NgClass, NgForOf} from "@angular/common";
+import {ArticleListComponent} from "../../../shared/article-helpers/article-list.component";
+import {LetDirective} from "@rx-angular/template/let";
+import {ShowAuthedDirective} from "../../../shared/show-authed.directive";
 
 @Component({
-  selector: "app-home-page",
-  templateUrl: "./home.component.html",
+  selector: 'app-acces',
+  templateUrl: './acces.component.html',
   styleUrls: [],
   imports: [
     NgClass,
@@ -24,7 +24,7 @@ import { ShowAuthedDirective } from "../../shared/show-authed.directive";
   ],
   standalone: true,
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class AccesComponent {
   isAuthenticated = false;
   listConfig: ArticleListConfig = {
     type: "all",
@@ -72,10 +72,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // Otherwise, set the list object
     this.listConfig = { type: type, filters: filters };
-  }
-
-  goToArticle() {
-    console.log('f');
-    void this.router.navigate(["/article"]);
   }
 }

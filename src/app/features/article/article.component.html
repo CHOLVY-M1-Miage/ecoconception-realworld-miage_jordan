@@ -1,23 +1,23 @@
-<div class="article-page" *ngIf="article">
-  <div class="banner">
-    <div class="container">
+<div class="flex article-page" *ngIf="article">
+  <div class="flex banner">
+    <div class="flex container">
       <h1>{{ article.title }}</h1>
 
       <app-article-meta [article]="article">
         <span *ngIf="canModify">
           <a
-            class="btn btn-sm btn-outline-secondary"
+            class="flex btn btn-sm btn-outline-secondary"
             [routerLink]="['/editor', article.slug]"
           >
-            <i class="ion-edit"></i> Edit Article
+            <i class="flex ion-edit"></i> Edit Article
           </a>
 
           <button
-            class="btn btn-sm btn-outline-danger"
+            class="flex btn btn-sm btn-outline-danger"
             [ngClass]="{ disabled: isDeleting }"
             (click)="deleteArticle()"
           >
-            <i class="ion-trash-a"></i> Delete Article
+            <i class="flex ion-trash-a"></i> Delete Article
           </button>
         </span>
 
@@ -33,22 +33,22 @@
             (toggle)="onToggleFavorite($event)"
           >
             {{ article.favorited ? "Unfavorite" : "Favorite" }} Article
-            <span class="counter">({{ article.favoritesCount }})</span>
+            <span class="flex counter">({{ article.favoritesCount }})</span>
           </app-favorite-button>
         </span>
       </app-article-meta>
     </div>
   </div>
 
-  <div class="container page">
-    <div class="row article-content">
-      <div class="col-md-12">
+  <div class="flex container page">
+    <div class="flex row article-content">
+      <div class="flex col-md-12">
         <div [innerHTML]="article.body | markdown | async"></div>
 
-        <ul class="tag-list">
+        <ul class="flex tag-list">
           <li
             *ngFor="let tag of article.tagList"
-            class="tag-default tag-pill tag-outline"
+            class="flex tag-default tag-pill tag-outline"
           >
             {{ tag }}
           </li>
@@ -58,22 +58,22 @@
 
     <hr />
 
-    <div class="article-actions">
+    <div class="flex article-actions">
       <app-article-meta [article]="article">
         <span *ngIf="canModify">
           <a
-            class="btn btn-sm btn-outline-secondary"
+            class="flex btn btn-sm btn-outline-secondary"
             [routerLink]="['/editor', article.slug]"
           >
-            <i class="ion-edit"></i> Edit Article
+            <i class="flex ion-edit"></i> Edit Article
           </a>
 
           <button
-            class="btn btn-sm btn-outline-danger"
+            class="flex btn btn-sm btn-outline-danger"
             [ngClass]="{ disabled: isDeleting }"
             (click)="deleteArticle()"
           >
-            <i class="ion-trash-a"></i> Delete Article
+            <i class="flex ion-trash-a"></i> Delete Article
           </button>
         </span>
 
@@ -89,32 +89,32 @@
             (toggle)="onToggleFavorite($event)"
           >
             {{ article.favorited ? "Unfavorite" : "Favorite" }} Article
-            <span class="counter">({{ article.favoritesCount }})</span>
+            <span class="flex counter">({{ article.favoritesCount }})</span>
           </app-favorite-button>
         </span>
       </app-article-meta>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-8 offset-md-2">
+    <div class="flex row">
+      <div class="flex col-xs-12 col-md-8 offset-md-2">
         <div *appShowAuthed="true">
           <app-list-errors [errors]="commentFormErrors"></app-list-errors>
-          <form class="card comment-form" (ngSubmit)="addComment()">
+          <form class="flex card comment-form" (ngSubmit)="addComment()">
             <fieldset [disabled]="isSubmitting">
-              <div class="card-block">
+              <div class="flex card-block">
                 <textarea
-                  class="form-control"
+                  class="flex form-control"
                   placeholder="Write a comment..."
                   rows="3"
                   [formControl]="commentControl"
                 ></textarea>
               </div>
-              <div class="card-footer">
+              <div class="flex card-footer">
                 <img
                   [src]="currentUser?.image === null ? '' : currentUser?.image"
-                  class="comment-author-img"
+                  class="flex comment-author-img"
                 />
-                <button class="btn btn-sm btn-primary" type="submit">
+                <button class="flex btn btn-sm btn-primary" type="submit">
                   Post Comment
                 </button>
               </div>

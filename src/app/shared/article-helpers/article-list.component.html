@@ -13,7 +13,7 @@
 </div>
 
 <nav *ngIf="loading === LoadingState.LOADED && totalPages.length > 1">
-  <ul class="pagination">
+  <ul class="pagination flex">
     <li
       class="page-item"
       [ngClass]="{ active: pageNumber === currentPage }"

@@ -1,32 +1,32 @@
-<div class="editor-page">
-  <div class="container page">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-xs-12">
+<div class="flex editor-page">
+  <div class="flex container page">
+    <div class="flex row">
+      <div class="flex col-md-10 offset-md-1 col-xs-12">
         <app-list-errors [errors]="errors"></app-list-errors>
 
         <form [formGroup]="articleForm">
           <fieldset [disabled]="isSubmitting">
-            <fieldset class="form-group">
+            <fieldset class="flex form-group">
               <input
-                class="form-control form-control-lg"
+                class="flex form-control form-control-lg"
                 formControlName="title"
                 type="text"
                 placeholder="Article Title"
               />
             </fieldset>
 
-            <fieldset class="form-group">
+            <fieldset class="flex form-group">
               <input
-                class="form-control"
+                class="flex form-control"
                 formControlName="description"
                 type="text"
                 placeholder="What's this article about?"
               />
             </fieldset>
 
-            <fieldset class="form-group">
+            <fieldset class="flex form-group">
               <textarea
-                class="form-control"
+                class="flex form-control"
                 formControlName="body"
                 rows="8"
                 placeholder="Write your article (in markdown)"
@@ -34,24 +34,24 @@
               </textarea>
             </fieldset>
 
-            <fieldset class="form-group">
+            <fieldset class="flex form-group">
               <input
-                class="form-control"
+                class="flex form-control"
                 type="text"
                 placeholder="Enter tags"
                 [formControl]="tagField"
                 (keyup.enter)="addTag()"
               />
-              <div class="tag-list">
-                <span *ngFor="let tag of tagList" class="tag-default tag-pill">
-                  <i class="ion-close-round" (click)="removeTag(tag)"></i>
+              <div class="flex tag-list">
+                <span *ngFor="let tag of tagList" class="flex tag-default tag-pill">
+                  <i class="flex ion-close-round" (click)="removeTag(tag)"></i>
                   {{ tag }}
                 </span>
               </div>
             </fieldset>
 
             <button
-              class="btn btn-lg pull-xs-right btn-primary"
+              class="flex btn btn-lg pull-xs-right btn-primary"
               type="button"
               (click)="submitForm()"
             >

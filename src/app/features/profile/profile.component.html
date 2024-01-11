@@ -1,9 +1,9 @@
-<div class="profile-page" *ngIf="profile">
-  <div class="user-info">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-10 offset-md-1">
-          <img [src]="profile.image" class="user-img" />
+<div class="flex profile-page" *ngIf="profile">
+  <div class="flex user-info">
+    <div class="flex container">
+      <div class="flex row">
+        <div class="flex col-xs-12 col-md-10 offset-md-1">
+          <img [src]="profile.image" class="flex user-img" />
           <h4>{{ profile.username }}</h4>
           <p>{{ profile.bio }}</p>
           <app-follow-button
@@ -15,23 +15,23 @@
           <a
             [routerLink]="['/settings']"
             *ngIf="isUser"
-            class="btn btn-sm btn-outline-secondary action-btn"
+            class="flex btn btn-sm btn-outline-secondary action-btn"
           >
-            <i class="ion-gear-a"></i> Edit Profile Settings
+            <i class="flex ion-gear-a"></i> Edit Profile Settings
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-10 offset-md-1">
-        <div class="articles-toggle">
-          <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
+  <div class="flex container">
+    <div class="flex row">
+      <div class="flex col-xs-12 col-md-10 offset-md-1">
+        <div class="flex articles-toggle">
+          <ul class="flex nav nav-pills outline-active">
+            <li class="flex nav-item">
               <a
-                class="nav-link"
+                class="flex nav-link"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 [routerLink]="['/profile', profile.username]"
@@ -39,9 +39,9 @@
                 My Posts
               </a>
             </li>
-            <li class="nav-item">
+            <li class="flex nav-item">
               <a
-                class="nav-link"
+                class="flex nav-link"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 [routerLink]="['/profile', profile.username, 'favorites']"

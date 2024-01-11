@@ -3,12 +3,18 @@ import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { UserService } from "./core/services/user.service";
 import { map } from "rxjs/operators";
 import { ProfileComponent } from "./features/profile/profile.component";
+import {AccesComponent} from "./features/home/acces/acces.component";
 
 const routes: Routes = [
   {
     path: "",
     loadComponent: () =>
       import("./features/home/home.component").then((m) => m.HomeComponent),
+  },
+  {
+    path: "article",
+    loadComponent: () =>
+      import("./features/home/acces/acces.component").then((m) => m.AccesComponent),
   },
   {
     path: "login",

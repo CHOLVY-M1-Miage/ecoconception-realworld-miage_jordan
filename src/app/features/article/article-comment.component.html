@@ -1,28 +1,28 @@
-<div class="card" *ngIf="comment">
-  <div class="card-block">
-    <p class="card-text">
+<div class="flex card" *ngIf="comment">
+  <div class="flex card-block">
+    <p class="flex card-text">
       {{ comment.body }}
     </p>
   </div>
-  <div class="card-footer">
+  <div class="flex card-footer">
     <a
-      class="comment-author"
+      class="flex comment-author"
       [routerLink]="['/profile', comment.author.username]"
     >
-      <img [src]="comment.author.image" class="comment-author-img" />
+      <img [src]="comment.author.image" class="flex comment-author-img" />
     </a>
     &nbsp;
     <a
-      class="comment-author"
+      class="flex comment-author"
       [routerLink]="['/profile', comment.author.username]"
     >
       {{ comment.author.username }}
     </a>
-    <span class="date-posted">
+    <span class="flex date-posted">
       {{ comment.createdAt | date : "longDate" }}
     </span>
-    <span class="mod-options" *ngIf="canModify$ | async">
-      <i class="ion-trash-a" (click)="delete.emit(true)"></i>
+    <span class="flex mod-options" *ngIf="canModify$ | async">
+      <i class="flex ion-trash-a" (click)="delete.emit(true)"></i>
     </span>
   </div>
 </div>
