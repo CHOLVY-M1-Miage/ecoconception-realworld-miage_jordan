@@ -13,3 +13,30 @@
   display: flex;
   flex-flow: row;
 }
+
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(2px, 2px) rotate(0.1deg); /* Ajustez la translation selon vos besoins */
+  }
+  50% {
+    transform: translate(0,0) rotate(0deg); /* Ajustez la translation selon vos besoins */
+  }
+  75% {
+    transform: translate(2px, 2px) rotate(0.1deg); /* Ajustez la translation selon vos besoins */
+  }
+  100% {
+    transform: translate(0,0) rotate(0deg);
+  }
+}
+
+* {
+
+}
+
+*{
+  animation: move 2s linear infinite; /* Ajustez la durée de l'animation selon vos besoins */
+}
